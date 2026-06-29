@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+.dark {
+  color-scheme: dark;
+  --color-neutral-50: #09090b;   /* Background of the main app */
+  --color-neutral-100: #18181b;  /* Modals borders, internal containers */
+  --color-neutral-200: #27272a;  /* Borders */
+  --color-neutral-300: #3f3f46;  /* Neutral line, disabled */
+  --color-neutral-400: #52525b;  /* Placeholder text */
+  --color-neutral-500: #a1a1aa;  /* Muted text */
+  --color-neutral-600: #d4d4d8;  /* Secondary text */
+  --color-neutral-700: #e4e4e7;  /* Prominent text */
+  --color-neutral-800: #f4f4f5;  /* Heading text */
+  --color-neutral-900: #f4f4f5;  /* Active text, bold text */
+  --color-neutral-950: #fafafa;  /* Pure white text */
+
+  --color-white: #121214;        /* Cards & modals background */
+  --color-slate-50: #181824;     /* Time Travel indicators background */
+  
+  /* Accent colors */
+  --color-indigo-50: #1e1e38;    /* Indigo badge light background */
+  --color-indigo-100: #252254;   /* Tab background */
+  --color-indigo-800: #c7d2fe;   /* Tab text, headings */
+  --color-indigo-950: #faf5ff;   /* Border inside calendar info */
+
+  --color-emerald-50: #142d20;   /* Green badges */
+  --color-emerald-100: #103e23;  /* Active tag */
+  --color-emerald-800: #a7f3d0;  /* Tag text */
+  --color-emerald-500: #10b981;
+  --color-emerald-600: #059669;
+
+  --color-blue-50: #16243d;      /* Blue badges */
+  --color-blue-100: #172c54;     /* Active tag */
+  --color-blue-800: #bfdbfe;     /* Tag text */
+  
+  --color-rose-50: #3b1319;      /* Error states background */
+  --color-rose-100: #5c1d24;     /* Error states border */
+  --color-rose-800: #fecdd3;     /* Error states text */
+
