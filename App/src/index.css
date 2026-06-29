@@ -37,3 +37,28 @@
   --color-rose-100: #5c1d24;     /* Error states border */
   --color-rose-800: #fecdd3;     /* Error states text */
 
+/* Text override rules inside dark mode to prevent text staying dark */
+  .text-blue-900 {
+    color: #bfdbfe !important;
+  }
+  .text-indigo-900 {
+    color: #c7d2fe !important;
+  }
+  .text-emerald-950 {
+    color: #a7f3d0 !important;
+  }
+  .text-rose-800 {
+    color: #fecdd3 !important;
+  }
+  .text-neutral-900 {
+    color: #f4f4f5 !important;
+  }
+  .text-neutral-950 {
+    color: #fafafa !important;
+  }
+  
+  /* Override default box-shadows to look professional in dark mode */
+  .shadow-xs, .shadow-sm, .shadow-md, .shadow-lg, .shadow-xl, .shadow-2xl {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.2) !important;
+  }
+}
