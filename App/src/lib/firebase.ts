@@ -35,3 +35,58 @@ export const getUserId = (): string => {
   }
   return id;
 };
+
+// Interface for DB CheckIn representation
+export interface DbCheckIn {
+  id: string; // matches userId (since 1 checkin max per user)
+  userId: string;
+  roomId: string;
+  timestamp: number;
+}
+
+// Interface for DB Vote representation
+export interface DbVote {
+  id: string; // matches userId_roomId_category
+  userId: string;
+  roomId: string;
+  category: 'crowd' | 'spec';
+  value: string;
+  timestamp: number;
+}
+
+// Save or clear user vote
+export async function dbSaveVote(roomId: string, category: 'crowd' | 'spec', value: string | undefined): Promise<void> {
+  const userId = getUserId();
+  const id = `${userId}_${roomId}_${category}`;
+  const voteDocRef = doc(db, 'votes', id);
+
+  if (!value) {
+    await deleteDoc(voteDocRef);
+  } else {
+    await setDoc(voteDocRef, {
+      id,
+      userId,
+      roomId,
+      category,
+      value,
+      timestamp: Date.now()
+    });
+  }
+}
+
+// Save or clear user check-in (checking in to a room automatically clears any previous check-in for this user)
+export async function dbSaveCheckIn(roomId: string | null): Promise<void> {
+  const userId = getUserId();
+  const checkInDocRef = doc(db, 'checkins', userId);
+
+  if (!roomId) {
+    await deleteDoc(checkInDocRef);
+  } else {
+    await setDoc(checkInDocRef, {
+      id: userId,
+      userId,
+      roomId,
+      timestamp: Date.now()
+    });
+  }
+}
