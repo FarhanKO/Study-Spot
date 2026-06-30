@@ -1,0 +1,17 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /checkins/{checkinId} {
+      allow read: if true;
+      allow create, update: if checkinId == request.resource.data.userId;
+      allow delete: if checkinId == resource.data.userId;
+    }
+    match /votes/{voteId} {
+      allow read: if true;
+      allow create, update: if request.resource.data.userId != null 
+        && voteId == request.resource.data.userId + "_" + request.resource.data.roomId + "_" + request.resource.data.category;
+      allow delete: if resource.data.userId != null 
+        && voteId == resource.data.userId + "_" + resource.data.roomId + "_" + resource.data.category;
+    }
+  }
+}
