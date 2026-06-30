@@ -1,0 +1,22 @@
+{
+  "collections": {
+    "checkins": {
+      "schema": {
+        "id": "string",
+        "userId": "string",
+        "roomId": "string",
+        "timestamp": "number"
+      }
+    },
+    "votes": {
+      "schema": {
+        "id": "string",
+        "userId": "string",
+        "roomId": "string",
+        "category": "string",
+        "value": "string",
+        "timestamp": "number"
+      }
+    }
+  }
+}
