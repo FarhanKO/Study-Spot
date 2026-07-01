@@ -1,0 +1,6 @@
+{
+  "name": "Study Spot",
+  "description": "Find free university labs and classrooms on campus, check how long they are free, view predicted occupancy, and check-in to study spaces.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
